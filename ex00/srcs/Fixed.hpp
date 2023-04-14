@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:51:00 by plau              #+#    #+#             */
-/*   Updated: 2023/04/14 19:15:43 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/14 22:58:47 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,14 @@
 class Fixed
 {
 	public:
-		Fixed(void);
-		~Fixed(void);
-	// private:
-	// 	int	_fixed_point_number;
+		Fixed(void); // default constructor
+		Fixed(int num); //copy constructor 
+		~Fixed(void); //destructor 
+		
+		int		getRawBits(void) const; //getter
+		void	setRawBits(int const raw); //setter
+	private:
+		int	_fixed_point_number;
 };
 
 #endif
