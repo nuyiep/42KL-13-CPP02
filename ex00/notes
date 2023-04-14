@@ -1,0 +1,15 @@
+
+Notes
+
+The Orthodox Canonical Class Form
+(A class should have the following 4 items)
+- Default constructor
+	- does not take any arguments
+	- used internally to initialize objects 
+		and data members when no other value is available
+- Copy constructor
+	- used in the implementation of call-by-value parameters
+- Assignment operator
+	- used to assign one value to another
+- Destructor
+	- invoked when an object is deleted
