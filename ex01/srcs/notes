@@ -1,0 +1,37 @@
+
+Notes
+
+1. Fixed point number 
+	- has a specific number of bits (or digits)
+		reserved for the integer part (the part to the left of the decimal point) and;
+	- a specific number of bits reserved for the 	
+		fractional part (the part to the right of the decimal point)
+2. Floating point number
+	- doesn't reserve a specific number of bits for the integer part or the fractional part
+	- instead it reserves a certain number of bits for the number and a certain number of bits for the number (called the mantissa or 			significand) to say where within that number the decimal place sits (called the exponent)
+3.	A fixed point number just means that there are a fixed number of digits after the decimal point. 
+	A floating point number allows for a varying number of digits after the decimal point.
+	For example, if you have a way of storing numbers that requires exactly four digits after the 
+	decimal point, then it is fixed point. Without that restriction it is floating point.
+4. Fractional bits
+	- the part to the right of the decimal point
+
+Fixed point  	(32 bit) 
+			_____________________
+							|___|
+							8 bit for decimal
+			32 - 8 = 24 
+			32 bit- integer's bits
+				  - integer got 4 bytes 
+				  - 4 * 8 = 32 bits
+			32 bits = 4 bytes
+int x // convert int to fpn
+			x . 2^8 = fpn // because the last 8 places 
+						is used to represent the number after the . 
+			x = fpn / 2 ^ 8 
+Float value = x
+	x = raw_bits/ 2^8 (from fpn to float)
+	x . 2 ^ 8 = raw_bits (from float to fixed point)
+
+
+

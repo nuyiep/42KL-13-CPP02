@@ -6,13 +6,14 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:12:34 by plau              #+#    #+#             */
-/*   Updated: 2023/04/17 12:45:16 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/17 22:43:52 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
-#include <iostream>
+#include <iostream> //std::cout
+#include <cmath> //roundf
 
 class Fixed
 {
@@ -21,9 +22,15 @@ class Fixed
 		Fixed(const Fixed &src);
 		Fixed(const int x);
 		Fixed(const float x);
+		Fixed& operator=(const Fixed& src);
 		~Fixed(void);
+		int 	getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float 	toFloat(void) const;
+		int   	toInt(void) const;
 	private:
-		static const int _fractionalBits = 8;
+		int _fpn; //fixed point number
+		int _fb; //fractional bits
 };
 
 #define	RESET "\033[0m"
