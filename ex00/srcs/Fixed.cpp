@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:50:57 by plau              #+#    #+#             */
-/*   Updated: 2023/04/16 21:58:25 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/17 12:51:14 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ Fixed::Fixed(const Fixed &src)
 {
 	std::cout << GREEN << "Copy constructor called" << RESET << '\n';
 	(*this) = src;
+	/**
+	 * (*this) - current object that is being constructed by the copy constructor
+	 * '=' - performs the copy assignment, which assigns the value of src to (*this)
+	 */
 }
 
 /* Destructor */

@@ -8,7 +8,7 @@ The Orthodox Canonical Class Form
 	- used internally to initialize objects 
 		and data members when no other value is available
 - Copy constructor
-	- used in the implementation of call-by-value parameters
+	- used in the implementation of 				call-by-value parameters
 - Assignment operator
 	- used to assign one value to another
 - Destructor
