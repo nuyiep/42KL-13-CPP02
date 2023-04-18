@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:12:31 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 14:45:25 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 14:48:10 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,9 @@ int   	Fixed::toInt(void) const
 /*								OTHER FUNCTIONS							  	  */
 /******************************************************************************/
 
+/* Need it because we are printing the class directly */
+/* so need to tell it what to print */
+/* more examples can be found in the testing folder */  
 /* Function when << operator is called */
 /* Gets the number's float from the class and outputs it to output stream */
 /* Overload of the insertion (<<) operator */
