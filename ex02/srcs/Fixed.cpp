@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 21:30:12 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 22:00:57 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,14 @@ Fixed::~Fixed(void)
 /******************************************************************************/
 /*								COMPARISON OPERATOR FUNCTIONS							  */
 /******************************************************************************/
+
+/*  Returns true if LHS is bigger than src, else returns false */
+bool	Fixed::operator>(Fixed src) const
+{
+	return (this->toFloat() > src.toFloat());
+}
+
+
 
 /******************************************************************************/
 /*								ARITHMETIC OPERATOR FUNCTIONS							  */
@@ -122,7 +130,6 @@ Fixed Fixed::operator/(Fixed src) const
 	return (this->toFloat() / src.toFloat());
 }
 
-
 /******************************************************************************/
 /*								GETTERS										  */
 /******************************************************************************/
@@ -151,6 +158,24 @@ void	Fixed::setFpn(int x)
 float	Fixed::toFloat(void) const
 {
 	return ((float)this->_fpn / (float)(1 << this->_fb));
+}
+
+/* Passing in 2 references to fpn */
+/* Returns a reference to the bigger one */
+Fixed	&Fixed::max(Fixed &x, Fixed &y)
+{
+	if (x.toFloat() >= y.toFloat())
+		return (x);
+	else
+		return (y);
+}
+
+const Fixed &Fixed::max(const Fixed &x, const Fixed &y)
+{
+	if (x.toFloat() >= y.toFloat())
+		return (x);
+	else
+		return (y);
 }
 
 /******************************************************************************/

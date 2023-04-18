@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:26 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 21:28:18 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 21:59:50 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ class Fixed
 		
 		/* Copy constructor */
 		Fixed(const Fixed &src);
-
-		/* Comparison operators */
 		
+		/* Comparison operators */
+		bool	operator>(Fixed src) const;
+
 		/* Arithmetic operators */
 		Fixed	operator+(Fixed src) const;
 		Fixed	operator++(void);
@@ -41,9 +42,11 @@ class Fixed
 		Fixed	operator/(Fixed src) const;
 		
 		/* Public functions */
-		float 	toFloat(void) const;
-		void	setFpn(int x);
-		int		getFpn(void) const;
+		float 				toFloat(void) const;
+		void				setFpn(int x);
+		int					getFpn(void) const;
+		static Fixed 		&max(Fixed &x, Fixed &y);
+		static const Fixed 	&max(const Fixed &x, const Fixed &y);
 	private:
 		int 			 _fpn;
 		static const int _fb = 8;
