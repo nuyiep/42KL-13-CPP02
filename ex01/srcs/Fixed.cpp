@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:12:31 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 14:31:13 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 14:45:25 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,6 @@ int   	Fixed::toInt(void) const
 std::ostream &operator<<(std::ostream &output, const Fixed &src)
 {
 	output << src.toFloat();
+	// output << src.getRawBits();
 	return (output);
 }
-
