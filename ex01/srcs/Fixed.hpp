@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:12:34 by plau              #+#    #+#             */
-/*   Updated: 2023/04/17 22:43:52 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 14:14:34 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Fixed
 		int _fpn; //fixed point number
 		int _fb; //fractional bits
 };
+
+std::ostream &operator<<(std::ostream &output, const Fixed &src);
 
 #define	RESET "\033[0m"
 #define GREEN "\033[32m"
