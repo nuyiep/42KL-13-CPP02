@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:26 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 16:32:15 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 21:28:18 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,28 @@
 class Fixed
 {
 	public:
+		/* Constructor and destructor */
 		Fixed(void);
 		Fixed(const int x);
 		Fixed(const float x);
 		~Fixed(void);
+		
+		/* Copy constructor */
+		Fixed(const Fixed &src);
+
+		/* Comparison operators */
+		
+		/* Arithmetic operators */
+		Fixed	operator+(Fixed src) const;
+		Fixed	operator++(void);
+		Fixed	operator++(int);
+		Fixed	operator*(Fixed src) const;
+		Fixed	operator-(Fixed src) const;
+		Fixed	operator--(void);
+		Fixed	operator--(int);
+		Fixed	operator/(Fixed src) const;
+		
+		/* Public functions */
 		float 	toFloat(void) const;
 		void	setFpn(int x);
 		int		getFpn(void) const;

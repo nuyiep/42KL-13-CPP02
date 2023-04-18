@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 16:44:50 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/18 21:30:12 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,89 @@ Fixed::Fixed(const float x)
 	this->_fpn = std::roundf(x * (1 << this->_fb));
 }
 
+/* Copy constructor */
+Fixed::Fixed(const Fixed &src)
+{
+	std::cout << YELLOW << "Copy constructor called" << RESET << '\n';
+	(*this) = src;
+}
+
 /* Destructor */
 Fixed::~Fixed(void)
 {
 	std::cout << CYAN << "Destructor" << RESET << '\n';
 }
+
+/******************************************************************************/
+/*								COMPARISON OPERATOR FUNCTIONS							  */
+/******************************************************************************/
+
+/******************************************************************************/
+/*								ARITHMETIC OPERATOR FUNCTIONS							  */
+/******************************************************************************/
+
+Fixed Fixed::operator+(Fixed src) const
+{
+	return (this->toFloat() + src.toFloat());
+}
+
+Fixed Fixed::operator*(Fixed src) const
+{
+	return (this->toFloat() * src.toFloat());
+}
+
+/* Pre-increment (++n) */
+Fixed Fixed::operator++(void)
+{
+	this->_fpn++;
+	return (*this);
+}
+
+/**
+ * Post-increment (n++)
+ * int - dummy argument used to distinguish prefix and postfix 
+ * 	   - serves no actual purpose, is simply a convention
+ * 	   - when we call a++, 0 is passed as the int 
+ *     - just a placeholder, not used for any actual computation
+ */
+Fixed Fixed::operator++(int)
+{
+	Fixed	preIncrement;
+
+	preIncrement = *this;
+	this->_fpn++;
+	return (preIncrement);
+}
+
+/* Normal minus operation */ 
+Fixed Fixed::operator-(Fixed src)const
+{
+	return (this->toFloat() - src.toFloat());
+}
+
+/* --n */
+Fixed Fixed::operator--(void)
+{
+	this->_fpn--;
+	return (*this);
+}
+
+/* n-- */
+Fixed Fixed::operator--(int)
+{
+	Fixed preDecrement;
+
+	preDecrement = this->_fpn;
+	this->_fpn--;
+	return (preDecrement);
+}
+
+/* Divide */
+Fixed Fixed::operator/(Fixed src) const
+{
+	return (this->toFloat() / src.toFloat());
+}
+
 
 /******************************************************************************/
 /*								GETTERS										  */
