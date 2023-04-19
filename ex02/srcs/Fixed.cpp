@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 22:00:57 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/19 12:08:44 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,30 @@ bool	Fixed::operator>(Fixed src) const
 	return (this->toFloat() > src.toFloat());
 }
 
+bool	Fixed::operator<(Fixed src) const
+{
+	return (this->toFloat() < src.toFloat());
+}
 
+bool	Fixed::operator>=(Fixed src) const
+{
+	return (this->toFloat() >= src.toFloat());
+}
+
+bool	Fixed::operator<=(Fixed src) const
+{
+	return (this->toFloat() <= src.toFloat());
+}
+
+bool	Fixed::operator==(Fixed src) const
+{
+	return (this->toFloat() == src.toFloat());
+}
+
+bool	Fixed::operator!=(Fixed src) const
+{
+	return (this->toFloat() != src.toFloat());
+}
 
 /******************************************************************************/
 /*								ARITHMETIC OPERATOR FUNCTIONS							  */
@@ -160,10 +183,11 @@ float	Fixed::toFloat(void) const
 	return ((float)this->_fpn / (float)(1 << this->_fb));
 }
 
-/* Passing in 2 references to fpn */
+/* Passing in 2 references on fpns */
 /* Returns a reference to the bigger one */
 Fixed	&Fixed::max(Fixed &x, Fixed &y)
 {
+	std::cout << RED << "using this function w/o const\n" << RESET;
 	if (x.toFloat() >= y.toFloat())
 		return (x);
 	else
@@ -172,10 +196,29 @@ Fixed	&Fixed::max(Fixed &x, Fixed &y)
 
 const Fixed &Fixed::max(const Fixed &x, const Fixed &y)
 {
+	std::cout << RED << "using this const function\n" << RESET;
 	if (x.toFloat() >= y.toFloat())
 		return (x);
 	else
 		return (y);
+}
+
+Fixed	&Fixed::min(Fixed &x, Fixed &y)
+{
+	std::cout << RED << "Not using this function w/o const\n" << RESET;
+	if (x.toFloat() >= y.toFloat())
+		return (y);
+	else
+		return (x);
+}
+
+const Fixed	&Fixed::min(const Fixed &x, const Fixed &y)
+{
+	std::cout << RED << "using this const function\n" << RESET;
+	if (x.toFloat() >= y.toFloat())
+		return (y);
+	else
+		return (x);
 }
 
 /******************************************************************************/
