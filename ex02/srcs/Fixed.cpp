@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/19 12:08:44 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/19 12:19:17 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,21 +157,21 @@ Fixed Fixed::operator/(Fixed src) const
 /*								GETTERS										  */
 /******************************************************************************/
 
-/* Getter function */
-int		Fixed::getFpn(void) const
-{
-	return (this->_fpn);
-}
+/* Getter function (also not needed) */
+// int		Fixed::getFpn(void) const
+// {
+// 	return (this->_fpn);
+// }
 
 /******************************************************************************/
 /*								SETTERS										  */
 /******************************************************************************/
 
-/* Setter function */
-void	Fixed::setFpn(int x)
-{
-	this->_fpn = x;
-}
+/* Setter function not needed in this case */
+// void	Fixed::setFpn(int x)
+// {
+// 	this->_fpn = x;
+// }
 
 /******************************************************************************/
 /*								PUBLIC FUNCTIONS							  */

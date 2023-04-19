@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:26 by plau              #+#    #+#             */
-/*   Updated: 2023/04/19 11:59:17 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/19 12:18:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,19 @@ class Fixed
 
 		/* Arithmetic operators */
 		Fixed	operator+(Fixed src) const;
-		Fixed	operator++(void);
-		Fixed	operator++(int);
-		Fixed	operator*(Fixed src) const;
 		Fixed	operator-(Fixed src) const;
-		Fixed	operator--(void);
-		Fixed	operator--(int);
+		Fixed	operator*(Fixed src) const;
 		Fixed	operator/(Fixed src) const;
 		
+		/* Increment/decrement operators */
+		Fixed	operator++(void); //pre-increment
+		Fixed	operator++(int); //post-increment
+		Fixed	operator--(void); //pre-decrement
+		Fixed	operator--(int); //post-decrement
+		
 		/* Getters and setters */
-		void				setFpn(int x);
-		int					getFpn(void) const;
+		// void				setFpn(int x);
+		// int					getFpn(void) const;
 		
 		/* Public functions */
 		float 				toFloat(void) const;
