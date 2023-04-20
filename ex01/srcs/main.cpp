@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:09:22 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 14:32:43 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 15:22:30 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ int	main( void )
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return ( 0 );
 }
-
-/**
- * Have this error "no operator "<<" matches these operands"
- *  
- * 
- */

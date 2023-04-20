@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:12:31 by plau              #+#    #+#             */
-/*   Updated: 2023/04/18 16:14:20 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 14:47:11 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,31 +75,31 @@ Fixed::~Fixed(void)
 /******************************************************************************/
 
 /* Copy assignment operator overload */
- Fixed& Fixed::operator=(const Fixed& src)
-{
-	std::cout << MAGENTA << "Copy assignment operator called" << RESET << '\n';
-	if (this != &src) // check for self-assignment
-		this->_fpn = src.getRawBits(); //copy the data from src
-	return (*this); //return a reference to the current object
-}
+//  Fixed& Fixed::operator=(const Fixed& src)
+// {
+// 	std::cout << MAGENTA << "Copy assignment operator called" << RESET << '\n';
+// 	if (this != &src) // check for self-assignment
+// 		this->_fpn = src.getRawBits(); //copy the data from src
+// 	return (*this); //return a reference to the current object
+// }
 
 /******************************************************************************/
 /*								GETTERS										  */
 /******************************************************************************/
 
-int Fixed::getRawBits(void) const
-{
-	return (this->_fpn);
-}
+// int Fixed::getRawBits(void) const
+// {
+// 	return (this->_fpn);
+// }
 
 /******************************************************************************/
 /*								SETTERS										  */
 /******************************************************************************/
 
-void Fixed::setRawBits(int const x)
-{
-	this->_fpn = x;
-}
+// void Fixed::setRawBits(int const x)
+// {
+// 	this->_fpn = x;
+// }
 
 /******************************************************************************/
 /*								PUBLIC FUNCTIONS							  */
