@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/20 21:14:14 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 21:54:45 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,6 @@ Fixed Fixed::operator*(Fixed src) const
  * same goes to pre-decrement 
  * https://www.geeksforgeeks.org/increment-and-decrement-operator-overloading-in-c/
  */
-	
 Fixed &Fixed::operator++(void)
 {
 	this->_fpn++;
