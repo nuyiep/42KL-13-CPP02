@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/19 12:19:17 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/19 12:24:36 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ bool	Fixed::operator!=(Fixed src) const
 }
 
 /******************************************************************************/
-/*								ARITHMETIC OPERATOR FUNCTIONS							  */
+/*								ARITHMETIC OPERATOR FUNCTIONS (OVERLOADING)							  */
 /******************************************************************************/
 
 Fixed Fixed::operator+(Fixed src) const
