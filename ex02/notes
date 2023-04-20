@@ -1,0 +1,49 @@
+deep copy v shallow copy - overload 
+pre-increment 
+	- should not create a new object
+	- should return a ref 
+
+More explanation
+- Shallow copy
+	- assign an object to another object using the default assignment operator or a copy constructor
+	- this creates a new object that shares the same memory address as the original object
+	- therefore, changes made to the original object will affect the copied object and vice versa
+
+	- Deep copy
+		Changes will be reflected in copied object
+	
+	class ShallowCopy								class DeepCopy
+	{												{
+		public:											public:
+			int *data;										int *data;
+			ShallowCopy(int val)							DeepCopy(int val)
+			{												{
+				data = new int;									data = new int;
+				*data = val;									*data = val;
+			}												}
+			ShallowCopy(const ShallowCopy& other)			DeepCopy(const DeepCopy& other)
+			{												{
+				data = other.data;								data = new int;
+																*data = *other.data;
+			}												}
+			~ShallowCopy()									~DeepCopy()
+			{												{
+				delete data;									delete data;
+			}												}
+	};													};
+
+	int main()											int main()
+	{													{
+		ShallowCopy obj1(5);								DeepCopy obj1(5);
+		ShallowCopy obj2(obj1); //Shallow copy				DeepCopy obj2(obj1); //Deep copy
+
+		//Modifying original object							//Modifying original object
+		*obj1.data = 10;									*obj1.data = 10;
+
+		//Changes are reflected in copied object			//Changes are not reflected in copied object
+		std::cout << *obj2.data << std::endl; //Output:10| 	std::cout << *obj2.data << std::endl; //Output: 5
+
+		return (0);											return (0);
+	}													}
+	https://www.geeksforgeeks.org/shallow-copy-and-deep-copy-in-c/
+	

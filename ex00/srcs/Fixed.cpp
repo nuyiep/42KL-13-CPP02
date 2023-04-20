@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:50:57 by plau              #+#    #+#             */
-/*   Updated: 2023/04/20 14:39:17 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 20:05:09 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ Fixed::~Fixed(void)
 /******************************************************************************/
 
 /* Copy assignment operator overload */
-Fixed& Fixed::operator=(const Fixed& src)
-{
-	std::cout << MAGENTA << "Copy assignment operator called" << RESET << '\n';
-	if (this != &src) //check for self-assignment
-		this->_fixed_point_number = src.getRawBits(); //copy the data from src
-	return (*this); //return a reference to the current object
-}
+// Fixed& Fixed::operator=(const Fixed& src)
+// {
+// 	std::cout << MAGENTA << "Copy assignment operator called" << RESET << '\n';
+// 	if (this != &src) //check for self-assignment
+// 		this->_fixed_point_number = src.getRawBits(); //copy the data from src
+// 	return (*this); //return a reference to the current object
+// }
 
 /******************************************************************************/
 /*								GETTERS										  */

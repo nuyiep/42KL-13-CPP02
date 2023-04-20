@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:21 by plau              #+#    #+#             */
-/*   Updated: 2023/04/20 14:56:25 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 21:14:14 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ Fixed::Fixed(const float x)
 }
 
 /* Copy constructor */
+/* Shallow copy (more explanation in notes) */
 Fixed::Fixed(const Fixed &src)
 {
 	std::cout << YELLOW << "Copy constructor called" << RESET << '\n';
@@ -102,7 +103,15 @@ Fixed Fixed::operator*(Fixed src) const
 }
 
 /* Pre-increment (++n) */
-Fixed Fixed::operator++(void)
+/**
+ * pre-increment should return a ref
+ * so it won't create a new object 
+ * (to check: wont call copy constructor) 
+ * same goes to pre-decrement 
+ * https://www.geeksforgeeks.org/increment-and-decrement-operator-overloading-in-c/
+ */
+	
+Fixed &Fixed::operator++(void)
 {
 	this->_fpn++;
 	return (*this);
@@ -131,7 +140,7 @@ Fixed Fixed::operator-(Fixed src)const
 }
 
 /* --n */
-Fixed Fixed::operator--(void)
+Fixed &Fixed::operator--(void)
 {
 	this->_fpn--;
 	return (*this);

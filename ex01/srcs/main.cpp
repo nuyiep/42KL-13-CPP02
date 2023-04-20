@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:09:22 by plau              #+#    #+#             */
-/*   Updated: 2023/04/20 15:22:30 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 20:24:28 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,18 @@ int	main( void )
 	a = Fixed( 1234.4321f );
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
+	std::cout << "b getter " << b.getRawBits() << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+	std::cout << "b to float " << b.toFloat() << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return ( 0 );
 }
+
+
+000100000
+
+0000000010

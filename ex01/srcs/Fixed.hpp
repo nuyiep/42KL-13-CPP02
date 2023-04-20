@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 22:12:34 by plau              #+#    #+#             */
-/*   Updated: 2023/04/20 14:47:15 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 20:22:28 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Fixed
 		Fixed(const float x);
 		// Fixed& operator=(const Fixed& src);
 		~Fixed(void);
-		// int 	getRawBits(void) const;
+		int 	getRawBits(void) const;
 		// void	setRawBits(int const raw);
 		float 	toFloat(void) const;
 		int   	toInt(void) const;

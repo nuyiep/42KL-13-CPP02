@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:01:26 by plau              #+#    #+#             */
-/*   Updated: 2023/04/19 12:18:56 by plau             ###   ########.fr       */
+/*   Updated: 2023/04/20 20:57:29 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ class Fixed
 		Fixed	operator/(Fixed src) const;
 		
 		/* Increment/decrement operators */
-		Fixed	operator++(void); //pre-increment
+		Fixed	&operator++(void); //pre-increment
 		Fixed	operator++(int); //post-increment
-		Fixed	operator--(void); //pre-decrement
+		Fixed	&operator--(void); //pre-decrement
 		Fixed	operator--(int); //post-decrement
 		
 		/* Getters and setters */

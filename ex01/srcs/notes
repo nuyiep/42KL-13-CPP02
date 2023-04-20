@@ -38,6 +38,8 @@ float value x // convert float to fpn
 convert fpn to float
 			x = fpn / 2^8
 
+10.0000000
+42.42x
 
 	
 	
